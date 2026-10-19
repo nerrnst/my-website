@@ -308,6 +308,17 @@ h2 {
     background 0.25s ease;
 }
 
+.service-card-link {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.service-card-link:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 4px;
+}
+
 .service-card:hover {
   transform: translateY(-6px);
   border-color: rgba(53, 224, 177, 0.5);
@@ -641,6 +652,68 @@ h2 {
   color: var(--teal);
 }
 
+.service-card-more {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--teal);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.service-detail-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 70px;
+  align-items: start;
+  padding-top: 0;
+}
+
+.service-detail-copy h2 {
+  margin-bottom: 18px;
+  font-size: 1.8rem;
+}
+
+.service-detail-copy p {
+  max-width: 680px;
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.service-detail-aside {
+  padding: 28px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.service-detail-aside h2 {
+  font-size: 1.3rem;
+}
+
+.service-detail-aside ul {
+  display: grid;
+  gap: 12px;
+  margin-block: 20px 26px;
+  color: var(--muted);
+  list-style: none;
+}
+
+.service-detail-aside li::before {
+  content: "↗";
+  margin-right: 9px;
+  color: var(--teal);
+}
+
+.service-back-link {
+  display: inline-flex;
+  margin-top: 24px;
+  color: var(--teal);
+  font-weight: 700;
+}
+
 .project-grid-page {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   row-gap: 36px;
@@ -879,7 +952,8 @@ h2 {
 
   .home-intro,
   .about-story,
-  .contact-layout {
+  .contact-layout,
+  .service-detail-layout {
     grid-template-columns: 1fr;
     gap: 35px;
   }
@@ -922,6 +996,10 @@ h2 {
   }
 
   .contact-layout {
+    padding-top: 0;
+  }
+
+  .service-detail-layout {
     padding-top: 0;
   }
 }
