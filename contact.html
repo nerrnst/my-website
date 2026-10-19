@@ -21,13 +21,15 @@
     <section class="page-hero container"><p class="eyebrow">HAVE A PROJECT IN MIND?</p><h1>Let's make something <span>meaningful.</span></h1><p class="hero-description">Tell us a little about what you're working on. We'll take it from there.</p></section>
     <section class="section container contact-layout">
       <div class="contact-aside"><p class="eyebrow">START HERE</p><h2>A good project begins with a clear conversation.</h2><p>Share your goals, your timeline, or even just the rough idea. We'll reply by email and talk through a useful next step.</p><a class="contact-email" href="mailto:nernst546@gmail.com">nernst546@gmail.com <span aria-hidden="true">↗</span></a></div>
-      <form class="contact-form" id="contact-form">
+      <form class="contact-form" id="contact-form" action="https://formsubmit.co/nernst546@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Nernstechhub project enquiry">
+        <input type="hidden" name="_template" value="table">
         <label for="name">Your name</label><input id="name" name="name" autocomplete="name" required>
         <label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required>
         <label for="service">What do you need?</label><select id="service" name="service" required><option value="" disabled selected>Select a service</option><option>Web development</option><option>Graphic design</option><option>Brand identity</option><option>Something else</option></select>
         <label for="message">Tell us about the project</label><textarea id="message" name="message" rows="5" required></textarea>
-        <button class="button button-primary" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
-        <p class="form-note" id="form-note" aria-live="polite">This form opens your email app with your message ready to send.</p>
+        <button class="button button-primary" type="submit">Send message <span aria-hidden="true">↗</span></button>
+        <p class="form-note" id="form-note" aria-live="polite">Your message will be sent directly to our inbox.</p>
       </form>
     </section>
   </main>

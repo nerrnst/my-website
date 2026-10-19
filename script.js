@@ -27,17 +27,41 @@ if (yearElement) yearElement.textContent = new Date().getFullYear();
 
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const formNote = contactForm.querySelector("#form-note");
+  const buttonLabel = submitButton.innerHTML;
+
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const formData = new FormData(contactForm);
-    const subject = `Project enquiry from ${formData.get("name")}`;
-    const body = [
-      `Name: ${formData.get("name")}`,
-      `Email: ${formData.get("email")}`,
-      `Service: ${formData.get("service")}`,
-      "",
-      formData.get("message"),
-    ].join("\n");
-    window.location.href = `mailto:nernst546@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (!contactForm.reportValidity()) return;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+    formNote.textContent = "Sending your message...";
+
+    fetch("https://formsubmit.co/ajax/nernst546@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(Object.fromEntries(new FormData(contactForm))),
+    })
+      .then(async (response) => {
+        const result = await response.json();
+        if (!response.ok || result.success === false || result.success === "false") {
+          throw new Error(result.message || "Your message could not be sent.");
+        }
+
+        formNote.textContent = "Thanks. Your message has been sent successfully.";
+        contactForm.reset();
+      })
+      .catch(() => {
+        formNote.textContent = "We couldn't send your message right now. Please try again or email nernst546@gmail.com.";
+      })
+      .finally(() => {
+        submitButton.disabled = false;
+        submitButton.innerHTML = buttonLabel;
+      });
   });
 }
