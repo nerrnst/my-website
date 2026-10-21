@@ -25,6 +25,8 @@ if (menuToggle && navLinks) {
 const yearElement = document.querySelector("#year");
 if (yearElement) yearElement.textContent = new Date().getFullYear();
 
+if (window.lucide) window.lucide.createIcons();
+
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
   const submitButton = contactForm.querySelector('button[type="submit"]');

@@ -3,31 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore web development, graphic design, and brand identity services from Nernst Digital Studio.">
-  <title>Services | Nernst Digital Studio</title>
+  <meta name="description" content="Explore Nernstechhub computer and phone repair, networking, CCTV, web development, design, printing, and chess coaching services.">
+  <title>Services | Nernstechhub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
   <header class="site-header"><nav class="navbar container" aria-label="Main navigation">
-    <a href="index.html" class="logo" aria-label="Nernst Digital Studio home"><span class="logo-mark">N</span><span>NERNST<span class="logo-accent">.</span></span></a>
+    <a href="index.html" class="logo" aria-label="Nernstechhub home"><span class="logo-mark">N</span><span>NERNSTECHHUB<span class="logo-accent">.</span></span></a>
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">☰</button>
-    <ul class="nav-links" id="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html" aria-current="page">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="nav-contact">Let's Talk ↗</a></li></ul>
+    <ul class="nav-links" id="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About us</a></li><li><a href="products.html">Products</a></li><li><a href="services.html" aria-current="page">Services</a></li><li><a href="https://nernstechhub.wordpress.com/contact-us/" class="nav-contact" target="_blank" rel="noopener noreferrer">Contact ↗</a></li></ul>
   </nav></header>
   <main>
-    <section class="page-hero container"><p class="eyebrow">WHAT WE DO</p><h1>Good ideas deserve <span>good execution.</span></h1><p class="hero-description">A focused set of creative and technical services to help your business show up clearly and work better online.</p></section>
+    <section class="page-hero container"><p class="eyebrow">NERNS TECHHUB SERVICES</p><h1>Practical support for <span>work, home and learning.</span></h1><p class="hero-description">From repairs and secure installations to digital design and chess coaching, explore how we can help.</p></section>
     <section class="section container service-page-section">
-      <div class="service-grid">
-        <a class="service-card service-card-link" href="web-development.html"><span class="card-number">01 / BUILD</span><h2>Web Development</h2><p>Fast, responsive websites shaped around your business goals and the people you serve.</p><ul class="service-details"><li>Responsive website development</li><li>Landing pages and business sites</li><li>Accessible, maintainable frontend</li></ul><span class="service-card-more">Explore service <span aria-hidden="true">↗</span></span></a>
-        <a class="service-card service-card-link" href="graphic-design.html"><span class="card-number">02 / COMMUNICATE</span><h2>Graphic Design</h2><p>Clear, considered visuals that make your offer easier to recognize and remember.</p><ul class="service-details"><li>Digital marketing graphics</li><li>Social media design assets</li><li>Visual direction and layouts</li></ul><span class="service-card-more">Explore service <span aria-hidden="true">↗</span></span></a>
-        <a class="service-card service-card-link" href="brand-identity.html"><span class="card-number">03 / DEFINE</span><h2>Brand Identity</h2><p>A distinctive visual foundation that gives your business a consistent voice across channels.</p><ul class="service-details"><li>Logo and identity concepts</li><li>Color and type systems</li><li>Practical brand asset sets</li></ul><span class="service-card-more">Explore service <span aria-hidden="true">↗</span></span></a>
+      <div class="services-infographic" aria-label="Nernstechhub services">
+        <article class="infographic-service">
+          <span class="infographic-marker"><span>01</span><i data-lucide="laptop" aria-hidden="true"></i></span>
+          <div class="infographic-title"><span class="infographic-category">REPAIR &amp; CARE</span><h3>Computer &amp; Laptop Repair</h3></div>
+          <p>Computer servicing, diagnostics and repairs.</p>
+        </article>
+        <article class="infographic-service infographic-service-orange">
+          <span class="infographic-marker"><span>02</span><i data-lucide="smartphone" aria-hidden="true"></i></span>
+          <div class="infographic-title"><span class="infographic-category">MOBILE</span><h3>Phone Repair &amp; Accessories</h3></div>
+          <p>Phone repairs, servicing and accessories.</p>
+        </article>
+        <article class="infographic-service infographic-service-green">
+          <span class="infographic-marker"><span>03</span><i data-lucide="network" aria-hidden="true"></i></span>
+          <div class="infographic-title"><span class="infographic-category">CONNECTIVITY</span><h3>Networking</h3></div>
+          <p>Network installation, Wi-Fi setup, cabling and troubleshooting.</p>
+        </article>
+        <article class="infographic-service infographic-service-coral">
+          <span class="infographic-marker"><span>04</span><i data-lucide="cctv" aria-hidden="true"></i></span>
+          <div class="infographic-title"><span class="infographic-category">SECURITY</span><h3>CCTV Installation</h3></div>
+          <p>Security cameras, installation and configuration.</p>
+        </article>
+        <article class="infographic-service infographic-service-violet">
+          <span class="infographic-marker"><span>05</span><i data-lucide="globe" aria-hidden="true"></i></span>
+          <div class="infographic-title"><span class="infographic-category">DIGITAL</span><h3>Web Development</h3></div>
+          <p>Business websites and web applications.</p>
+        </article>
+        <article class="infographic-service infographic-service-gold">
+          <span class="infographic-marker"><span>06</span><i data-lucide="printer" aria-hidden="true"></i></span>
+          <div class="infographic-title"><span class="infographic-category">CREATIVE</span><h3>Graphic Design &amp; Printing</h3></div>
+          <p>Logo design, branding and marketing materials.</p>
+        </article>
+        <article class="infographic-service infographic-service-teal">
+          <span class="infographic-marker"><span>07</span><i data-lucide="brain" aria-hidden="true"></i></span>
+          <div class="infographic-title"><span class="infographic-category">LEARNING</span><h3>Chess Training &amp; Coaching</h3></div>
+          <p>Chess lessons, strategic thinking, tactics, opening preparation and tournament coaching.</p>
+        </article>
       </div>
     </section>
-    <section class="callout-band"><div class="container callout-content"><div><p class="eyebrow">LET'S MAKE A PLAN</p><h2>Tell us what you want to build.</h2></div><a class="button button-primary" href="contact.html">Start a conversation <span aria-hidden="true">↗</span></a></div></section>
+    <section class="hub-contact-band"><div class="container hub-contact-content"><div><p class="eyebrow">NEED A HAND?</p><h2>Let's find the right solution.</h2><p>Tell us what you need and our team will help you get started.</p></div><a class="button button-primary" href="https://nernstechhub.wordpress.com/contact-us/" target="_blank" rel="noopener noreferrer">Contact Nernstechhub <span aria-hidden="true">↗</span></a></div></section>
   </main>
-  <footer class="site-footer"><div class="container footer-content"><a href="index.html" class="logo"><span class="logo-mark">N</span><span>NERNST<span class="logo-accent">.</span></span></a><p>© <span id="year"></span> Nernst Digital Studio</p><a href="mailto:nernst546@gmail.com">nernst546@gmail.com</a></div></footer>
+  <footer class="site-footer"><div class="container footer-content"><a href="index.html" class="logo"><span class="logo-mark">N</span><span>NERNSTECHHUB<span class="logo-accent">.</span></span></a><p>© <span id="year"></span> Nernstechhub</p><a href="https://nernstechhub.wordpress.com/" target="_blank" rel="noopener noreferrer">Visit WordPress site ↗</a></div></footer>
 </body>
 </html>

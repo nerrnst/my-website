@@ -35,9 +35,9 @@ body {
   line-height: 1.7;
 }
 
-h1,
 h2,
 h3,
+h4,
 .logo {
   font-family: Georgia, "Times New Roman", serif;
   letter-spacing: -0.02em;
@@ -166,14 +166,14 @@ a {
   margin-bottom: 18px;
 }
 
-h1 {
+h2 {
   max-width: 650px;
   font-size: clamp(2.6rem, 5vw, 4.5rem);
   line-height: 1.12;
   letter-spacing: -2px;
 }
 
-h1 span {
+h2 span {
   color: var(--teal);
 }
 
@@ -281,7 +281,7 @@ h1 span {
    4. SECTION HEADINGS
 ================================= */
 
-h2 {
+h3 {
   max-width: 700px;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.2;
@@ -721,12 +721,40 @@ h2 {
 }
 
 .hub-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
   min-height: 610px;
-  padding-block: 75px;
+  padding: 75px max(5%, calc((100% - 1120px) / 2));
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: 65px;
+}
+
+.hub-hero::before,
+.hub-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hub-hero::before {
+  z-index: -2;
+  inset: -10px;
+  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85");
+  background-position: center 48%;
+  background-size: cover;
+  filter: blur(7px);
+  transform: scale(1.025);
+}
+
+.hub-hero::after {
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(245, 247, 251, 0.94) 0%, rgba(245, 247, 251, 0.84) 48%, rgba(245, 247, 251, 0.72) 100%);
 }
 
 .hub-hero h1 {
@@ -868,6 +896,12 @@ h2 {
   font-weight: 700;
 }
 
+.hub-card-icon svg {
+  width: 23px;
+  height: 23px;
+  stroke-width: 1.8;
+}
+
 .hub-card h3,
 .hub-service-row h3 {
   font-size: 1.2rem;
@@ -888,6 +922,56 @@ h2 {
   color: var(--teal);
   font-size: 0.88rem;
   font-weight: 700;
+}
+
+.product-gallery-heading {
+  margin-top: 52px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.product-gallery-heading h3 {
+  font-size: 1.35rem;
+}
+
+.product-gallery-heading p {
+  max-width: 500px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.product-gallery-item {
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--surface-light);
+}
+
+.product-gallery-featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.product-gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.product-gallery-item:hover img {
+  transform: scale(1.035);
 }
 
 .hub-service-list {
@@ -986,10 +1070,10 @@ h2 {
   font-weight: 700;
 }
 
-.infographic-marker b {
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.04em;
+.infographic-marker svg {
+  width: 25px;
+  height: 25px;
+  stroke-width: 1.8;
 }
 
 .infographic-category {
@@ -1437,6 +1521,23 @@ h2 {
 
   .hub-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-gallery-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .product-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .product-gallery-featured {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16 / 9;
   }
 
   .graphics-about-services ul,

@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -20,8 +21,8 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="#home" aria-current="page">Home</a></li>
         <li><a href="about.html">About us</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="#contact" class="nav-contact">Contact ↗</a></li>
       </ul>
     </nav>
@@ -33,7 +34,7 @@
         <h1>Smart technology.<br><span>Strong solutions.</span><br>Better futures.</h1>
         <p class="hero-description">Reliable IT solutions, digital services, and technology products for businesses, schools, and individuals across Kenya.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#products">Explore products <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="products.html">Explore products <span aria-hidden="true">↗</span></a>
           <a class="button button-secondary" href="https://nernstechhub.wordpress.com/contact-us/" target="_blank" rel="noopener noreferrer">Talk to our team</a>
         </div>
         <p class="hero-note">Reliable. Affordable. Professional. Future-ready.</p>
@@ -52,13 +53,9 @@
       <div class="container hub-outcomes"><span>Business efficiency</span><span>Digital communication</span><span>System security</span><span>Technology performance</span></div>
     </section>
 
-    <section class="section container hub-products" id="products">
-      <div class="hub-section-heading"><div><p class="eyebrow">PRODUCTS</p><h2>Technology for work and life.</h2></div><p>Reliable equipment and tools, selected to support modern digital environments.</p></div>
-      <div class="hub-card-grid hub-product-grid">
-        <a class="hub-card product-card" href="https://nernstechhub.wordpress.com/products/" target="_blank" rel="noopener noreferrer"><span class="hub-card-index">01 / COMPUTING</span><span class="hub-card-icon" aria-hidden="true">01</span><h3>Computers &amp; accessories</h3><p>Desktop and laptop computers, peripherals, and everyday computer accessories.</p><span class="hub-card-link">Browse products <span aria-hidden="true">↗</span></span></a>
-        <a class="hub-card product-card" href="https://nernstechhub.wordpress.com/products/" target="_blank" rel="noopener noreferrer"><span class="hub-card-index">02 / OFFICE</span><span class="hub-card-icon" aria-hidden="true">02</span><h3>Office &amp; storage</h3><p>Printers, office equipment, hard drives, SSDs, and flash storage.</p><span class="hub-card-link">Browse products <span aria-hidden="true">↗</span></span></a>
-        <a class="hub-card product-card" href="https://nernstechhub.wordpress.com/products/" target="_blank" rel="noopener noreferrer"><span class="hub-card-index">03 / CONNECT</span><span class="hub-card-icon" aria-hidden="true">03</span><h3>Security &amp; networking</h3><p>CCTV systems, networking devices, infrastructure tools, and connectivity equipment.</p><span class="hub-card-link">Browse products <span aria-hidden="true">↗</span></span></a>
-      </div>
+    <section class="section container hub-products-entry">
+      <div class="hub-section-heading"><div><p class="eyebrow">PRODUCTS</p><h2>Technology for work and life.</h2></div><p>Browse our product range and gallery of visual work.</p></div>
+      <a class="button button-primary" href="products.html">Explore products <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="hub-services section" id="services">
@@ -66,37 +63,37 @@
         <div class="hub-section-heading"><div><p class="eyebrow">PROFESSIONAL SERVICES</p><h2>Support that keeps you moving.</h2></div><p>From secure installations to day-to-day IT support, get practical help from a team that understands your setup.</p></div>
         <div class="services-infographic" aria-label="Nernstechhub services">
           <article class="infographic-service infographic-service-blue">
-            <span class="infographic-marker"><span>01</span><b>PC</b></span>
+            <span class="infographic-marker"><span>01</span><i data-lucide="laptop" aria-hidden="true"></i></span>
             <div class="infographic-title"><span class="infographic-category">REPAIR &amp; CARE</span><h3>Computer &amp; Laptop Repair</h3></div>
             <p>Computer servicing, diagnostics and repairs.</p>
           </article>
           <article class="infographic-service infographic-service-orange">
-            <span class="infographic-marker"><span>02</span><b>PH</b></span>
+            <span class="infographic-marker"><span>02</span><i data-lucide="smartphone" aria-hidden="true"></i></span>
             <div class="infographic-title"><span class="infographic-category">MOBILE</span><h3>Phone Repair &amp; Accessories</h3></div>
             <p>Phone repairs, servicing and accessories.</p>
           </article>
           <article class="infographic-service infographic-service-green">
-            <span class="infographic-marker"><span>03</span><b>NW</b></span>
+            <span class="infographic-marker"><span>03</span><i data-lucide="network" aria-hidden="true"></i></span>
             <div class="infographic-title"><span class="infographic-category">CONNECTIVITY</span><h3>Networking</h3></div>
             <p>Network installation, Wi-Fi setup, cabling and troubleshooting.</p>
           </article>
           <article class="infographic-service infographic-service-coral">
-            <span class="infographic-marker"><span>04</span><b>CV</b></span>
+            <span class="infographic-marker"><span>04</span><i data-lucide="cctv" aria-hidden="true"></i></span>
             <div class="infographic-title"><span class="infographic-category">SECURITY</span><h3>CCTV Installation</h3></div>
             <p>Security cameras, installation and configuration.</p>
           </article>
           <article class="infographic-service infographic-service-violet">
-            <span class="infographic-marker"><span>05</span><b>WD</b></span>
+            <span class="infographic-marker"><span>05</span><i data-lucide="globe" aria-hidden="true"></i></span>
             <div class="infographic-title"><span class="infographic-category">DIGITAL</span><h3>Web Development</h3></div>
             <p>Business websites and web applications.</p>
           </article>
           <article class="infographic-service infographic-service-gold">
-            <span class="infographic-marker"><span>06</span><b>GD</b></span>
+            <span class="infographic-marker"><span>06</span><i data-lucide="printer" aria-hidden="true"></i></span>
             <div class="infographic-title"><span class="infographic-category">CREATIVE</span><h3>Graphic Design &amp; Printing</h3></div>
             <p>Logo design, branding and marketing materials.</p>
           </article>
           <article class="infographic-service infographic-service-teal">
-            <span class="infographic-marker"><span>07</span><b>CH</b></span>
+            <span class="infographic-marker"><span>07</span><i data-lucide="brain" aria-hidden="true"></i></span>
             <div class="infographic-title"><span class="infographic-category">LEARNING</span><h3>Chess Training &amp; Coaching</h3></div>
             <p>Chess lessons, strategic thinking, tactics, opening preparation and tournament coaching.</p>
           </article>
