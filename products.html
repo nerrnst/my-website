@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore Nernstechhub computers, office equipment, CCTV and networking products, and visual gallery.">
+  <meta name="description" content="Browse Nernstechhub technology products, add items to your basket and send an order request for current pricing and availability.">
   <title>Products | Nernstechhub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,24 +27,101 @@
     </nav>
   </header>
   <main>
-    <section class="page-hero container">
-      <p class="eyebrow">PRODUCTS</p>
-      <h1>Technology for work <span>and life.</span></h1>
-      <p class="hero-description">Nernstechhub supplies dependable technology equipment for businesses, institutions, and individuals. Our range supports communication, security, productivity, and digital connectivity.</p>
+    <section class="store-hero">
+      <div class="container store-hero-content">
+        <div>
+          <p class="eyebrow">THE NERNSTECHHUB STORE</p>
+          <h1>Tech that works<br><span>for you.</span></h1>
+          <p>Find the right computers, office equipment, security systems and networking essentials. Add what you need to your basket and request an order from our team.</p>
+          <a class="button button-primary" href="#shop">Shop products <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="store-hero-card" aria-hidden="true">
+          <span class="store-hero-icon"><i data-lucide="laptop"></i></span>
+          <span class="store-hero-orbit store-hero-orbit-one"></span>
+          <span class="store-hero-orbit store-hero-orbit-two"></span>
+          <span class="store-hero-caption">Technology for work and life</span>
+        </div>
+      </div>
     </section>
 
-    <section class="section container hub-products product-page-content">
-      <div class="hub-section-heading">
-        <div><p class="eyebrow">OUR RANGE</p><h2>Reliable tools for everyday needs.</h2></div>
-        <p>From computing and office essentials to security and networking equipment, find practical technology selected for performance and value.</p>
+    <section class="section container store-section" id="shop">
+      <div class="store-heading">
+        <div><p class="eyebrow">SHOP OUR RANGE</p><h2>What are you looking for?</h2></div>
+        <p>Choose products to request. We’ll confirm the latest price and availability before you place your order.</p>
       </div>
-      <div class="hub-card-grid hub-product-grid">
-        <article class="hub-card product-card"><span class="hub-card-index">01 / COMPUTING</span><span class="hub-card-icon" aria-hidden="true"><i data-lucide="laptop"></i></span><h3>Computers &amp; accessories</h3><p>Desktop and laptop computers, peripherals, and everyday computer accessories.</p></article>
-        <article class="hub-card product-card"><span class="hub-card-index">02 / OFFICE</span><span class="hub-card-icon" aria-hidden="true"><i data-lucide="printer"></i></span><h3>Office &amp; storage</h3><p>Printers, office equipment, hard drives, SSDs, and flash storage.</p></article>
-        <article class="hub-card product-card"><span class="hub-card-index">03 / CONNECT</span><span class="hub-card-icon" aria-hidden="true"><i data-lucide="cctv"></i></span><h3>Security &amp; networking</h3><p>CCTV systems, routers, switches, networking infrastructure, and connectivity equipment.</p></article>
+      <div class="store-toolbar">
+        <label class="store-search" for="product-search">
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input id="product-search" type="search" placeholder="Search products..." autocomplete="off">
+        </label>
+        <div class="store-categories" role="group" aria-label="Filter products by category">
+          <button class="store-filter is-active" type="button" data-category="all" aria-pressed="true">All products</button>
+          <button class="store-filter" type="button" data-category="Computers" aria-pressed="false">Computers</button>
+          <button class="store-filter" type="button" data-category="Office" aria-pressed="false">Office</button>
+          <button class="store-filter" type="button" data-category="Security" aria-pressed="false">Security</button>
+          <button class="store-filter" type="button" data-category="Networking" aria-pressed="false">Networking</button>
+          <button class="store-filter" type="button" data-category="Accessories" aria-pressed="false">Accessories</button>
+        </div>
       </div>
 
-      <div class="product-gallery-heading"><h3>Product &amp; photography gallery</h3><p>A closer look at Nernstechhub's products, creative work, and local visual stories.</p></div>
+      <div class="store-layout">
+        <div class="store-results">
+          <p class="store-result-count" id="product-result-count" aria-live="polite">8 product categories</p>
+          <div class="store-product-grid" id="product-grid">
+            <article class="store-product" data-name="Laptop computers" data-category="Computers" data-keywords="laptop computer desktop pc">
+              <div class="store-product-art art-blue"><span class="store-product-icon"><i data-lucide="laptop" aria-hidden="true"></i></span><span class="store-product-badge">COMPUTERS</span></div>
+              <div class="store-product-info"><h3>Laptop computers</h3><p>Reliable laptops for study, business and everyday use.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="Computer accessories" data-category="Accessories" data-keywords="mouse keyboard monitor peripherals">
+              <div class="store-product-art art-orange"><span class="store-product-icon"><i data-lucide="keyboard" aria-hidden="true"></i></span><span class="store-product-badge">ACCESSORIES</span></div>
+              <div class="store-product-info"><h3>Computer accessories</h3><p>Everyday peripherals and accessories for your setup.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="Printers & office equipment" data-category="Office" data-keywords="printer office business">
+              <div class="store-product-art art-lilac"><span class="store-product-icon"><i data-lucide="printer" aria-hidden="true"></i></span><span class="store-product-badge">OFFICE</span></div>
+              <div class="store-product-info"><h3>Printers &amp; office equipment</h3><p>Practical printing and office equipment for workspaces.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="Hard drives & SSDs" data-category="Accessories" data-keywords="hard drive ssd storage">
+              <div class="store-product-art art-mint"><span class="store-product-icon"><i data-lucide="database" aria-hidden="true"></i></span><span class="store-product-badge">STORAGE</span></div>
+              <div class="store-product-info"><h3>Hard drives &amp; SSDs</h3><p>Storage options to back up files and expand your devices.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="Flash storage" data-category="Accessories" data-keywords="flash drive usb memory stick">
+              <div class="store-product-art art-yellow"><span class="store-product-icon"><i data-lucide="usb" aria-hidden="true"></i></span><span class="store-product-badge">ACCESSORIES</span></div>
+              <div class="store-product-info"><h3>Flash storage</h3><p>Portable storage for moving and keeping your files.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="CCTV camera systems" data-category="Security" data-keywords="cctv cameras surveillance security">
+              <div class="store-product-art art-rose"><span class="store-product-icon"><i data-lucide="cctv" aria-hidden="true"></i></span><span class="store-product-badge">SECURITY</span></div>
+              <div class="store-product-info"><h3>CCTV camera systems</h3><p>Security camera systems for homes and businesses.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="Routers & Wi-Fi" data-category="Networking" data-keywords="router wifi internet wireless">
+              <div class="store-product-art art-sky"><span class="store-product-icon"><i data-lucide="wifi" aria-hidden="true"></i></span><span class="store-product-badge">NETWORKING</span></div>
+              <div class="store-product-info"><h3>Routers &amp; Wi-Fi</h3><p>Stay connected with networking and wireless equipment.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="Network switches" data-category="Networking" data-keywords="switch ethernet network">
+              <div class="store-product-art art-slate"><span class="store-product-icon"><i data-lucide="network" aria-hidden="true"></i></span><span class="store-product-badge">NETWORKING</span></div>
+              <div class="store-product-info"><h3>Network switches</h3><p>Connect devices and expand your wired network.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+          </div>
+          <p class="store-empty" id="product-empty" hidden>No products match your search. Try another term or category.</p>
+        </div>
+
+        <aside class="store-basket" aria-labelledby="basket-title">
+          <div class="store-basket-heading"><h2 id="basket-title">Your basket</h2><span class="store-basket-count" id="basket-count" aria-label="0 items">0</span></div>
+          <p class="store-basket-note">Your selected items</p>
+          <ul class="store-basket-items" id="basket-items"><li class="store-basket-empty">Your basket is empty. Add a product to get started.</li></ul>
+          <div class="store-order-note"><i data-lucide="info" aria-hidden="true"></i><p>We’ll confirm current prices, stock and delivery with you before you place an order.</p></div>
+          <form class="store-order-form" id="order-form">
+            <label for="order-name">Your name</label><input id="order-name" name="name" autocomplete="name" required>
+            <label for="order-phone">Phone number</label><input id="order-phone" name="phone" type="tel" autocomplete="tel" required>
+            <label for="order-location">Delivery area</label><input id="order-location" name="location" autocomplete="address-level2" required>
+            <button class="button button-primary store-checkout" id="checkout-button" type="submit" disabled>Request order <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+          </form>
+          <p class="store-basket-footnote">This sends an order request by email. Payment is arranged after we confirm your order. If your email app does not open, write to <a href="mailto:nernst546@gmail.com">nernst546@gmail.com</a>.</p>
+          <p class="store-order-status" id="order-status" aria-live="polite"></p>
+        </aside>
+      </div>
+    </section>
+    <section class="section container product-gallery-section">
+      <div class="product-gallery-heading"><h2>Product &amp; photography gallery</h2><p>A closer look at Nernstechhub's products, creative work, and local visual stories.</p></div>
       <div class="product-gallery" aria-label="Nernstechhub product and photography gallery">
         <figure class="product-gallery-item product-gallery-featured"><img src="https://nernstechhub.wordpress.com/wp-content/uploads/2026/06/image.png?w=768" alt="Nernstechhub product and photography gallery feature image" loading="lazy" decoding="async"></figure>
         <figure class="product-gallery-item"><img src="https://nernstechhub.wordpress.com/wp-content/uploads/2026/06/my-project-x.jpeg?w=275" alt="Nernstechhub product and creative work gallery image" loading="lazy" decoding="async"></figure>
