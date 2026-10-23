@@ -61,43 +61,81 @@
           <button class="store-filter" type="button" data-category="Security" aria-pressed="false">Security</button>
           <button class="store-filter" type="button" data-category="Networking" aria-pressed="false">Networking</button>
           <button class="store-filter" type="button" data-category="Accessories" aria-pressed="false">Accessories</button>
+          <button class="store-filter store-saved-filter" type="button" data-category="saved" aria-pressed="false">Saved <span id="wishlist-count">0</span></button>
         </div>
+        <label class="store-sort" for="product-sort"><span>Sort by</span>
+          <select id="product-sort">
+            <option value="featured">Featured</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+          </select>
+        </label>
       </div>
+      <div class="store-delivery-info">
+        <i data-lucide="truck" aria-hidden="true"></i>
+        <div><strong>Delivery details confirmed with your order</strong><p>Share your delivery area in the basket. We’ll confirm availability and any delivery charges before you decide.</p></div>
+        <span>No online payment is taken here</span>
+      </div>
+      <p class="store-wishlist-status" id="wishlist-status" aria-live="polite"></p>
 
       <div class="store-layout">
         <div class="store-results">
-          <p class="store-result-count" id="product-result-count" aria-live="polite">8 product categories</p>
+          <p class="store-result-count" id="product-result-count" aria-live="polite">14 product categories</p>
           <div class="store-product-grid" id="product-grid">
             <article class="store-product" data-name="Laptop computers" data-category="Computers" data-keywords="laptop computer desktop pc">
-              <div class="store-product-art art-blue"><span class="store-product-icon"><i data-lucide="laptop" aria-hidden="true"></i></span><span class="store-product-badge">COMPUTERS</span></div>
+              <div class="store-product-art art-blue"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Laptop computer on a desk" loading="lazy" decoding="async"><span class="store-product-badge">COMPUTERS</span></div>
               <div class="store-product-info"><h3>Laptop computers</h3><p>Reliable laptops for study, business and everyday use.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
             </article>
             <article class="store-product" data-name="Computer accessories" data-category="Accessories" data-keywords="mouse keyboard monitor peripherals">
-              <div class="store-product-art art-orange"><span class="store-product-icon"><i data-lucide="keyboard" aria-hidden="true"></i></span><span class="store-product-badge">ACCESSORIES</span></div>
+              <div class="store-product-art art-orange"><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Computer keyboard and accessories" loading="lazy" decoding="async"><span class="store-product-badge">ACCESSORIES</span></div>
               <div class="store-product-info"><h3>Computer accessories</h3><p>Everyday peripherals and accessories for your setup.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
             </article>
+            <article class="store-product" data-name="Computer monitors" data-category="Accessories" data-keywords="monitor screen display desktop">
+              <div class="store-product-art art-sky"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Desktop computer monitor and workspace" loading="lazy" decoding="async"><span class="store-product-badge">ACCESSORIES</span></div>
+              <div class="store-product-info"><h3>Computer monitors</h3><p>Displays for home offices, business and everyday computing.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="Keyboards &amp; mice" data-category="Accessories" data-keywords="keyboard mouse wireless wired typing">
+              <div class="store-product-art art-orange"><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Keyboard for a computer setup" loading="lazy" decoding="async"><span class="store-product-badge">ACCESSORIES</span></div>
+              <div class="store-product-info"><h3>Keyboards &amp; mice</h3><p>Wired and wireless input devices for work and home.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="Webcams &amp; headsets" data-category="Accessories" data-keywords="webcam camera headphones headset microphone video calls">
+              <div class="store-product-art art-lilac"><img src="https://images.unsplash.com/photo-1625842268584-8f3296236761?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Computer accessories for video calls and audio" loading="lazy" decoding="async"><span class="store-product-badge">ACCESSORIES</span></div>
+              <div class="store-product-info"><h3>Webcams &amp; headsets</h3><p>Audio and video accessories for calls, meetings and online learning.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="Cables &amp; adapters" data-category="Accessories" data-keywords="cable hdmi usb type c adapter connector">
+              <div class="store-product-art art-mint"><img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Electronic cables and computer connectors" loading="lazy" decoding="async"><span class="store-product-badge">ACCESSORIES</span></div>
+              <div class="store-product-info"><h3>Cables &amp; adapters</h3><p>Useful connections and adapters for your devices and workspace.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="USB hubs &amp; card readers" data-category="Accessories" data-keywords="usb hub card reader ports expansion">
+              <div class="store-product-art art-yellow"><img src="https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Computer components and device accessories" loading="lazy" decoding="async"><span class="store-product-badge">ACCESSORIES</span></div>
+              <div class="store-product-info"><h3>USB hubs &amp; card readers</h3><p>Add useful ports and read memory cards across your devices.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
+            <article class="store-product" data-name="Laptop stands" data-category="Accessories" data-keywords="laptop stand riser holder desk">
+              <div class="store-product-art art-rose"><img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Laptop at a desk workspace" loading="lazy" decoding="async"><span class="store-product-badge">ACCESSORIES</span></div>
+              <div class="store-product-info"><h3>Laptop stands</h3><p>Workspace accessories to help organize your laptop setup.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
+            </article>
             <article class="store-product" data-name="Printers & office equipment" data-category="Office" data-keywords="printer office business">
-              <div class="store-product-art art-lilac"><span class="store-product-icon"><i data-lucide="printer" aria-hidden="true"></i></span><span class="store-product-badge">OFFICE</span></div>
+              <div class="store-product-art art-lilac"><img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Office printer" loading="lazy" decoding="async"><span class="store-product-badge">OFFICE</span></div>
               <div class="store-product-info"><h3>Printers &amp; office equipment</h3><p>Practical printing and office equipment for workspaces.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
             </article>
             <article class="store-product" data-name="Hard drives & SSDs" data-category="Accessories" data-keywords="hard drive ssd storage">
-              <div class="store-product-art art-mint"><span class="store-product-icon"><i data-lucide="database" aria-hidden="true"></i></span><span class="store-product-badge">STORAGE</span></div>
+              <div class="store-product-art art-mint"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Computer storage and server equipment" loading="lazy" decoding="async"><span class="store-product-badge">STORAGE</span></div>
               <div class="store-product-info"><h3>Hard drives &amp; SSDs</h3><p>Storage options to back up files and expand your devices.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
             </article>
             <article class="store-product" data-name="Flash storage" data-category="Accessories" data-keywords="flash drive usb memory stick">
-              <div class="store-product-art art-yellow"><span class="store-product-icon"><i data-lucide="usb" aria-hidden="true"></i></span><span class="store-product-badge">ACCESSORIES</span></div>
+              <div class="store-product-art art-yellow"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Close-up of electronic technology components" loading="lazy" decoding="async"><span class="store-product-badge">ACCESSORIES</span></div>
               <div class="store-product-info"><h3>Flash storage</h3><p>Portable storage for moving and keeping your files.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
             </article>
             <article class="store-product" data-name="CCTV camera systems" data-category="Security" data-keywords="cctv cameras surveillance security">
-              <div class="store-product-art art-rose"><span class="store-product-icon"><i data-lucide="cctv" aria-hidden="true"></i></span><span class="store-product-badge">SECURITY</span></div>
+              <div class="store-product-art art-rose"><img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Security camera system" loading="lazy" decoding="async"><span class="store-product-badge">SECURITY</span></div>
               <div class="store-product-info"><h3>CCTV camera systems</h3><p>Security camera systems for homes and businesses.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
             </article>
             <article class="store-product" data-name="Routers & Wi-Fi" data-category="Networking" data-keywords="router wifi internet wireless">
-              <div class="store-product-art art-sky"><span class="store-product-icon"><i data-lucide="wifi" aria-hidden="true"></i></span><span class="store-product-badge">NETWORKING</span></div>
+              <div class="store-product-art art-sky"><img src="https://images.unsplash.com/photo-1606904825846-647eb07f5be2?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Wireless networking equipment" loading="lazy" decoding="async"><span class="store-product-badge">NETWORKING</span></div>
               <div class="store-product-info"><h3>Routers &amp; Wi-Fi</h3><p>Stay connected with networking and wireless equipment.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
             </article>
             <article class="store-product" data-name="Network switches" data-category="Networking" data-keywords="switch ethernet network">
-              <div class="store-product-art art-slate"><span class="store-product-icon"><i data-lucide="network" aria-hidden="true"></i></span><span class="store-product-badge">NETWORKING</span></div>
+              <div class="store-product-art art-slate"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=640&amp;q=80" alt="Network server equipment and connections" loading="lazy" decoding="async"><span class="store-product-badge">NETWORKING</span></div>
               <div class="store-product-info"><h3>Network switches</h3><p>Connect devices and expand your wired network.</p><span class="store-stock">Price &amp; availability on request</span><button class="store-add" type="button" data-add-product>Add to basket <i data-lucide="plus" aria-hidden="true"></i></button></div>
             </article>
           </div>
@@ -108,14 +146,20 @@
           <div class="store-basket-heading"><h2 id="basket-title">Your basket</h2><span class="store-basket-count" id="basket-count" aria-label="0 items">0</span></div>
           <p class="store-basket-note">Your selected items</p>
           <ul class="store-basket-items" id="basket-items"><li class="store-basket-empty">Your basket is empty. Add a product to get started.</li></ul>
-          <div class="store-order-note"><i data-lucide="info" aria-hidden="true"></i><p>We’ll confirm current prices, stock and delivery with you before you place an order.</p></div>
+          <div class="store-order-note"><i data-lucide="info" aria-hidden="true"></i><p>Prices are confirmed from the approved catalogue. The M-Pesa prompt covers products only; confirm any delivery charge with the shop before approving.</p></div>
           <form class="store-order-form" id="order-form">
             <label for="order-name">Your name</label><input id="order-name" name="name" autocomplete="name" required>
             <label for="order-phone">Phone number</label><input id="order-phone" name="phone" type="tel" autocomplete="tel" required>
             <label for="order-location">Delivery area</label><input id="order-location" name="location" autocomplete="address-level2" required>
-            <button class="button button-primary store-checkout" id="checkout-button" type="submit" disabled>Request order <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+            <label for="payment-method">Payment method</label>
+            <select id="payment-method" name="paymentMethod" required>
+              <option value="M-Pesa STK Push">M-Pesa STK Push</option>
+              <option value="Email order request">Email order request</option>
+            </select>
+            <p class="store-payment-note" id="payment-method-note">The secure M-Pesa prompt is available after the shop configures Safaricom and confirms product prices. It covers products only; confirm any delivery charge before approving. Order details and payment status are stored securely for up to 24 hours to process checkout.</p>
+            <button class="button button-primary store-checkout" id="checkout-button" type="submit" disabled>Send M-Pesa prompt <i data-lucide="arrow-right" aria-hidden="true"></i></button>
           </form>
-          <p class="store-basket-footnote">This sends an order request by email. Payment is arranged after we confirm your order. If your email app does not open, write to <a href="mailto:nernst546@gmail.com">nernst546@gmail.com</a>.</p>
+          <p class="store-basket-footnote">Only approve the STK prompt if the Safaricom amount and recipient are correct. Email order requests do not take payment. If your email app does not open, write to <a href="mailto:nernst546@gmail.com">nernst546@gmail.com</a>.</p>
           <p class="store-order-status" id="order-status" aria-live="polite"></p>
         </aside>
       </div>
@@ -139,9 +183,31 @@
         <figure class="product-gallery-item"><img src="https://nernstechhub.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-13-at-3.00.58-pm.jpeg?w=747" alt="Nernstechhub product gallery image 9" loading="lazy" decoding="async"></figure>
         <figure class="product-gallery-item"><img src="https://nernstechhub.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-13-at-3.03.25-pm.jpeg?w=715" alt="Nernstechhub product gallery image 10" loading="lazy" decoding="async"></figure>
         <figure class="product-gallery-item"><img src="https://nernstechhub.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-13-at-3.05.07-pm.jpeg?w=741" alt="Nernstechhub product gallery image 11" loading="lazy" decoding="async"></figure>
+        <figure class="product-gallery-item"><img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Laptop computer and workstation setup" loading="lazy" decoding="async"></figure>
+        <figure class="product-gallery-item"><img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Laptop computer for work and study" loading="lazy" decoding="async"></figure>
+        <figure class="product-gallery-item"><img src="https://images.unsplash.com/photo-1625842268584-8f3296236761?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Computer components and technology accessories" loading="lazy" decoding="async"></figure>
+        <figure class="product-gallery-item"><img src="https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Modern computer and electronics equipment" loading="lazy" decoding="async"></figure>
+        <figure class="product-gallery-item"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Computer keyboard and desktop accessories" loading="lazy" decoding="async"></figure>
+        <figure class="product-gallery-item"><img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Computer hardware and electronic components" loading="lazy" decoding="async"></figure>
+        <figure class="product-gallery-item"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Laptop computer displayed on a desk" loading="lazy" decoding="async"></figure>
+        <figure class="product-gallery-item"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Laptop and computer workspace" loading="lazy" decoding="async"></figure>
       </div>
     </section>
   </main>
+  <dialog class="store-quick-dialog" id="product-quick-view" aria-labelledby="quick-view-title">
+    <div class="store-quick-content">
+      <button class="store-quick-close" type="button" data-close-quick-view aria-label="Close product details">×</button>
+      <div class="store-quick-image"><img id="quick-view-image" alt=""></div>
+      <div class="store-quick-info">
+        <p class="eyebrow" id="quick-view-category"></p>
+        <h2 id="quick-view-title"></h2>
+        <p id="quick-view-description"></p>
+        <span class="store-stock">Price &amp; availability on request</span>
+        <p class="store-quick-delivery">Delivery options and any charges are confirmed with your delivery area before you place an order.</p>
+        <button class="button button-primary" id="quick-view-add" type="button">Add to basket</button>
+      </div>
+    </div>
+  </dialog>
   <footer class="site-footer"><div class="container footer-content"><a href="index.html" class="logo"><span class="logo-mark">N</span><span>NERNSTECHHUB<span class="logo-accent">.</span></span></a><p>© <span id="year"></span> Nernstechhub</p><a href="https://nernstechhub.wordpress.com/" target="_blank" rel="noopener noreferrer">Visit WordPress site ↗</a></div></footer>
 </body>
 </html>
