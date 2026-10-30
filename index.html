@@ -8,10 +8,10 @@
   <title>Nernstechhub | Online Technology Store</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=nernstechhub-top-ad">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=recently-viewed-shelf-v1">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
-  <script src="script.js?v=core-shopping-upgrades" defer></script>
+  <script src="script.js?v=recently-viewed-shelf-v1" defer></script>
 </head>
 <body class="shop-home">
   <header class="site-header shop-header">
@@ -33,7 +33,10 @@
       <form class="shop-header-search" action="products.html#shop" role="search">
         <label class="visually-hidden" for="store-search">Search products</label>
         <i data-lucide="search" aria-hidden="true"></i>
-        <input id="store-search" type="search" name="search" placeholder="Search laptops, accessories and more">
+        <div class="shop-search-field">
+          <input id="store-search" type="search" name="search" placeholder="Search laptops, accessories and more" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="store-search-suggestions" autocomplete="off">
+          <div class="shop-search-suggestions" id="store-search-suggestions" role="listbox" aria-label="Suggested categories and products" hidden></div>
+        </div>
         <button type="submit">Search</button>
       </form>
       <a class="shop-header-action" href="https://nernstechhub.wordpress.com/contact-us/" target="_blank" rel="noopener noreferrer"><i data-lucide="headphones" aria-hidden="true"></i><span>Help</span></a>
@@ -57,37 +60,150 @@
         <a href="products.html?category=Accessories&amp;search=storage#shop"><i data-lucide="hard-drive" aria-hidden="true"></i> Storage</a>
       </div>
     </nav>
+    <section class="shop-market-hero container" id="home" aria-label="Nernstechhub shopping adverts">
+      <div class="shop-market-visual" data-product-slideshow aria-label="Animated featured products">
+        <article class="shop-market-slide is-active" data-slide aria-hidden="false">
+          <div class="shop-ad-scene shop-ad-scene-laptop" aria-hidden="true">
+            <span class="shop-ad-orb shop-ad-orb-one"></span><span class="shop-ad-orb shop-ad-orb-two"></span>
+            <svg class="shop-ad-illustration shop-ad-laptop-illustration" viewBox="0 0 640 400" role="presentation">
+              <defs>
+                <linearGradient id="laptop-screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1b617d"/><stop offset="1" stop-color="#10263a"/></linearGradient>
+                <linearGradient id="laptop-base" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8f6ff"/><stop offset="1" stop-color="#77bacb"/></linearGradient>
+              </defs>
+              <ellipse cx="327" cy="337" rx="206" ry="22" fill="#071624" opacity=".58"/>
+              <g class="shop-ad-laptop-screen">
+                <rect x="176" y="58" width="300" height="222" rx="17" fill="#d9f6fc"/>
+                <rect x="187" y="69" width="278" height="198" rx="10" fill="url(#laptop-screen)"/>
+                <rect x="204" y="86" width="76" height="164" rx="7" fill="#102b40"/>
+                <circle cx="221" cy="104" r="7" fill="#53d8d1"/>
+                <rect x="235" y="100" width="31" height="6" rx="3" fill="#d7f5ff" opacity=".85"/>
+                <rect x="214" y="130" width="48" height="5" rx="2.5" fill="#5a8194"/>
+                <rect x="214" y="146" width="39" height="5" rx="2.5" fill="#5a8194"/>
+                <rect x="214" y="162" width="45" height="5" rx="2.5" fill="#5a8194"/>
+                <rect x="214" y="195" width="48" height="36" rx="5" fill="#1e3d53"/>
+                <rect x="296" y="88" width="155" height="64" rx="8" fill="#1e3d53"/>
+                <path d="M311 135l25-24 19 14 29-29 26 18 22-13" fill="none" stroke="#55ddd2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="296" y="164" width="72" height="85" rx="7" fill="#1e3d53"/>
+                <rect x="379" y="164" width="72" height="85" rx="7" fill="#1e3d53"/>
+                <circle cx="332" cy="194" r="14" fill="#ffb874"/>
+                <path d="M313 232c2-17 10-25 19-25s17 8 19 25" fill="#58d8d2"/>
+                <path d="M391 221l13-17 11 8 17-22" fill="none" stroke="#ffb874" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="422" cy="190" r="4" fill="#ffb874"/>
+              </g>
+              <path class="shop-ad-laptop-base" d="M157 285h338l37 33c5 5 1 13-7 13H128c-8 0-12-8-7-13l36-33z" fill="url(#laptop-base)"/>
+              <path d="M272 291h109l-9 12h-91z" fill="#448091"/>
+              <rect x="155" y="323" width="362" height="4" rx="2" fill="#eaffff" opacity=".7"/>
+            </svg>
+            <div class="shop-ad-float-card shop-ad-card-ready"><span class="shop-ad-card-check">✓</span><span><strong>Price &amp; availability</strong><small>Confirmed before you order</small></span></div>
+            <span class="shop-ad-spark shop-ad-spark-one">✦</span><span class="shop-ad-spark shop-ad-spark-two">✧</span>
+          </div>
+          <a class="shop-market-overlay" href="products.html?category=Computers#shop"><span>SHOP LAPTOPS &amp; COMPUTERS</span><strong>Save time finding the right tech.</strong><span class="shop-slide-cta">Browse computers <i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+        <article class="shop-market-slide" data-slide aria-hidden="true">
+          <div class="shop-ad-scene shop-ad-scene-workspace" aria-hidden="true">
+            <span class="shop-ad-orb shop-ad-orb-one"></span><span class="shop-ad-orb shop-ad-orb-two"></span>
+            <svg class="shop-ad-illustration shop-ad-workspace-illustration" viewBox="0 0 640 400" role="presentation">
+              <defs>
+                <linearGradient id="monitor-screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#245b78"/><stop offset="1" stop-color="#122b3d"/></linearGradient>
+                <linearGradient id="monitor-base" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e0f6ff"/><stop offset="1" stop-color="#98d4dc"/></linearGradient>
+              </defs>
+              <ellipse cx="344" cy="341" rx="215" ry="20" fill="#071624" opacity=".52"/>
+              <g class="shop-ad-monitor">
+                <rect x="179" y="53" width="306" height="212" rx="17" fill="#dff8ff"/>
+                <rect x="191" y="65" width="282" height="188" rx="10" fill="url(#monitor-screen)"/>
+                <rect x="208" y="82" width="248" height="28" rx="6" fill="#1d3d53"/>
+                <circle cx="224" cy="96" r="5" fill="#55ddd2"/>
+                <rect x="239" y="93" width="88" height="6" rx="3" fill="#dff7ff" opacity=".8"/>
+                <rect x="210" y="124" width="111" height="112" rx="7" fill="#1d3d53"/>
+                <rect x="332" y="124" width="122" height="48" rx="7" fill="#1d3d53"/>
+                <rect x="332" y="181" width="122" height="55" rx="7" fill="#1d3d53"/>
+                <path d="M224 211l21-24 20 12 27-34 18 19" fill="none" stroke="#54ddd2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="310" cy="184" r="5" fill="#ffb874"/>
+                <rect x="345" y="137" width="54" height="6" rx="3" fill="#b9dbe5"/>
+                <rect x="345" y="151" width="92" height="5" rx="2.5" fill="#537d91"/>
+                <circle cx="357" cy="201" r="10" fill="#ffb874"/>
+                <rect x="375" y="197" width="61" height="6" rx="3" fill="#b9dbe5"/>
+                <rect x="375" y="211" width="43" height="5" rx="2.5" fill="#537d91"/>
+              </g>
+              <path d="M306 268h52v45h-52z" fill="url(#monitor-base)"/>
+              <path d="M274 314c0-7 6-12 13-12h90c7 0 13 5 13 12v5H274z" fill="#c7edf3"/>
+              <g class="shop-ad-keyboard">
+                <path d="M149 327l24-34h202l29 34c3 4 0 9-5 9H155c-5 0-8-5-6-9z" fill="url(#monitor-base)"/>
+                <path d="M183 302h167M176 311h185M169 320h199" stroke="#5293a3" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 8"/>
+                <path d="M245 329h73" stroke="#5293a3" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </svg>
+            <div class="shop-ad-float-card shop-ad-card-connect"><span class="shop-ad-connect-icon">↗</span><span><strong>Shopping made simple</strong><small>Price &amp; availability on request</small></span></div>
+            <span class="shop-ad-spark shop-ad-spark-one">✦</span><span class="shop-ad-spark shop-ad-spark-two">✧</span>
+          </div>
+          <a class="shop-market-overlay" href="products.html?category=Accessories#shop"><span>SHOP KEYBOARDS, MICE &amp; MORE</span><strong>Find your setup essentials in less time.</strong><span class="shop-slide-cta">Browse accessories <i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+        <button class="shop-market-arrow shop-market-arrow-prev" type="button" data-slide-prev aria-label="Show previous advert"><i data-lucide="chevron-left" aria-hidden="true"></i></button>
+        <button class="shop-market-arrow shop-market-arrow-next" type="button" data-slide-next aria-label="Show next advert"><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+        <div class="shop-market-dots" role="group" aria-label="Choose a featured product">
+          <button class="is-active" type="button" data-slide-to="0" aria-label="Show computer shopping advert" aria-pressed="true"></button>
+          <button type="button" data-slide-to="1" aria-label="Show accessories shopping advert" aria-pressed="false"></button>
+        </div>
+      </div>
+    </section>
   </header>
   <span class="visually-hidden" id="basket-storage-status" aria-live="polite"></span>
   <main>
-    <section class="shop-market-hero container" id="home" aria-label="Nernstechhub featured product advertisements">
-      <div class="shop-market-visual" data-product-slideshow aria-label="Featured products">
-        <article class="shop-market-slide is-active" data-slide aria-hidden="false">
-          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Laptop computer set up in a bright workspace" fetchpriority="high">
-          <a class="shop-market-overlay" href="products.html?category=Computers#shop"><span>COMPUTERS FOR WORK &amp; STUDY</span><strong>Find your next laptop.</strong><span class="shop-slide-cta">Explore computers <i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
-        </article>
-        <article class="shop-market-slide" data-slide aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Keyboard and accessories for a computer setup">
-          <a class="shop-market-overlay" href="products.html?category=Accessories#shop"><span>SMALL UPGRADES, BIG DIFFERENCE</span><strong>Make your setup yours.</strong><span class="shop-slide-cta">Shop accessories <i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
-        </article>
-        <article class="shop-market-slide" data-slide aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Printer and useful office equipment">
-          <a class="shop-market-overlay" href="products.html?category=Office#shop"><span>GET YOUR WORKSPACE READY</span><strong>Office essentials, sorted.</strong><span class="shop-slide-cta">Explore office tech <i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
-        </article>
-        <article class="shop-market-slide" data-slide aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Security camera to help protect your home">
-          <a class="shop-market-overlay" href="products.html?category=Security#shop"><span>PROTECT WHAT MATTERS</span><strong>Explore CCTV solutions.</strong><span class="shop-slide-cta">Shop security <i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
-        </article>
-        <button class="shop-market-arrow shop-market-arrow-prev" type="button" data-slide-prev aria-label="Show previous featured product"><i data-lucide="arrow-left" aria-hidden="true"></i></button>
-        <button class="shop-market-arrow shop-market-arrow-next" type="button" data-slide-next aria-label="Show next featured product"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
-        <div class="shop-market-dots" role="group" aria-label="Choose a featured product">
-          <button class="is-active" type="button" data-slide-to="0" aria-label="Show laptops" aria-pressed="true"></button>
-          <button type="button" data-slide-to="1" aria-label="Show accessories" aria-pressed="false"></button>
-          <button type="button" data-slide-to="2" aria-label="Show office products" aria-pressed="false"></button>
-          <button type="button" data-slide-to="3" aria-label="Show security products" aria-pressed="false"></button>
+
+    <section class="shop-featured shop-featured-campaign" id="featured" aria-label="Featured products">
+      <div class="shop-market-section-heading">
+        <div><p class="shop-market-eyebrow"><span></span> NERNSTECHHUB TECH PICKS</p><h2>Find your next tech essential</h2></div>
+        <div class="shop-featured-controls">
+          <a class="shop-featured-saved-link" href="products.html?category=saved#shop"><i data-lucide="heart" aria-hidden="true"></i> Saved <span id="featured-wishlist-count">0</span></a>
+          <a href="products.html#shop">See all products <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          <button type="button" data-shelf-scroll="-1" aria-label="Scroll to previous products"><i data-lucide="chevron-left" aria-hidden="true"></i></button>
+          <button type="button" data-shelf-scroll="1" aria-label="Scroll to more products"><i data-lucide="chevron-right" aria-hidden="true"></i></button>
         </div>
-        <span class="shop-market-stamp" aria-hidden="true"><i data-lucide="sparkles"></i></span>
       </div>
+      <span class="visually-hidden" id="featured-wishlist-status" aria-live="polite"></span>
+      <div class="shop-featured-grid" data-featured-shelf aria-label="Featured product categories">
+        <article class="shop-featured-card">
+          <a class="shop-featured-image" href="products.html?category=Computers#shop"><span class="shop-featured-tag">COMPUTERS</span><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Laptop computer for study and work" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <button class="shop-featured-save" type="button" data-featured-wishlist="Laptop computers" aria-label="Save Laptop computers to wishlist" aria-pressed="false"><i data-lucide="heart" aria-hidden="true"></i></button>
+          <div class="shop-featured-info"><a href="products.html?category=Computers#shop"><strong>Laptop computers</strong><span>Explore options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price &amp; availability on request</p></div>
+        </article>
+        <article class="shop-featured-card">
+          <a class="shop-featured-image shop-featured-lilac" href="products.html?search=monitor#shop"><span class="shop-featured-tag">MONITORS</span><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Computer monitor and desk setup" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <button class="shop-featured-save" type="button" data-featured-wishlist="Computer monitors" aria-label="Save Computer monitors to wishlist" aria-pressed="false"><i data-lucide="heart" aria-hidden="true"></i></button>
+          <div class="shop-featured-info"><a href="products.html?search=monitor#shop"><strong>Computer monitors</strong><span>Explore options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price &amp; availability on request</p></div>
+        </article>
+        <article class="shop-featured-card">
+          <a class="shop-featured-image shop-featured-blue" href="products.html?search=keyboard#shop"><span class="shop-featured-tag">ACCESSORIES</span><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Keyboard and computer accessories" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <button class="shop-featured-save" type="button" data-featured-wishlist="Keyboards &amp; mice" aria-label="Save Keyboards and mice to wishlist" aria-pressed="false"><i data-lucide="heart" aria-hidden="true"></i></button>
+          <div class="shop-featured-info"><a href="products.html?search=keyboard#shop"><strong>Keyboards &amp; mice</strong><span>Explore options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price &amp; availability on request</p></div>
+        </article>
+        <article class="shop-featured-card">
+          <a class="shop-featured-image shop-featured-green" href="products.html?category=Office#shop"><span class="shop-featured-tag">OFFICE</span><img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Printer and office equipment" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <button class="shop-featured-save" type="button" data-featured-wishlist="Printers &amp; office equipment" aria-label="Save Printers and office equipment to wishlist" aria-pressed="false"><i data-lucide="heart" aria-hidden="true"></i></button>
+          <div class="shop-featured-info"><a href="products.html?category=Office#shop"><strong>Printers &amp; office</strong><span>Explore options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price &amp; availability on request</p></div>
+        </article>
+        <article class="shop-featured-card">
+          <a class="shop-featured-image shop-featured-slate" href="products.html?category=Security#shop"><span class="shop-featured-tag">SECURITY</span><img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Home security camera" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <button class="shop-featured-save" type="button" data-featured-wishlist="CCTV camera systems" aria-label="Save CCTV camera systems to wishlist" aria-pressed="false"><i data-lucide="heart" aria-hidden="true"></i></button>
+          <div class="shop-featured-info"><a href="products.html?category=Security#shop"><strong>CCTV camera systems</strong><span>Explore options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price &amp; availability on request</p></div>
+        </article>
+        <article class="shop-featured-card">
+          <a class="shop-featured-image shop-featured-green" href="products.html?category=Networking#shop"><span class="shop-featured-tag">NETWORKING</span><img src="https://images.unsplash.com/photo-1606904825846-647eb07f5be2?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Wireless networking equipment" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <button class="shop-featured-save" type="button" data-featured-wishlist="Routers &amp; Wi-Fi" aria-label="Save Routers and Wi-Fi to wishlist" aria-pressed="false"><i data-lucide="heart" aria-hidden="true"></i></button>
+          <div class="shop-featured-info"><a href="products.html?category=Networking#shop"><strong>Routers &amp; Wi-Fi</strong><span>Explore options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price &amp; availability on request</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shop-featured shop-featured-campaign shop-recent-campaign" data-recent-section aria-label="Recently viewed products" hidden>
+      <div class="shop-market-section-heading">
+        <div><p class="shop-market-eyebrow"><span></span> PICK UP WHERE YOU LEFT OFF</p><h2>Recently viewed</h2></div>
+        <div class="shop-featured-controls">
+          <button type="button" data-recent-scroll="-1" aria-label="Scroll to previous recently viewed products"><i data-lucide="chevron-left" aria-hidden="true"></i></button>
+          <button type="button" data-recent-scroll="1" aria-label="Scroll to more recently viewed products"><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      <div class="shop-featured-grid" data-recent-shelf aria-label="Your recently viewed products"></div>
     </section>
 
     <section class="shop-market-perks" aria-label="Shopping information">
@@ -95,35 +211,6 @@
         <div><i data-lucide="badge-check" aria-hidden="true"></i><span><strong>Friendly local support</strong><small>Get help choosing the right tech</small></span></div>
         <div><i data-lucide="package-check" aria-hidden="true"></i><span><strong>Order with confidence</strong><small>We confirm stock and pricing</small></span></div>
         <div><i data-lucide="truck" aria-hidden="true"></i><span><strong>Delivery across Kenya</strong><small>Details confirmed with your order</small></span></div>
-      </div>
-    </section>
-
-    <section class="shop-featured container" id="featured">
-      <div class="shop-market-section-heading">
-        <div><p class="shop-market-eyebrow"><span></span> PICKED FOR YOUR SETUP</p><h2>Explore our tech</h2></div>
-        <a href="products.html#shop">See all products <i data-lucide="arrow-right" aria-hidden="true"></i></a>
-      </div>
-      <div class="shop-featured-grid">
-        <article class="shop-featured-card">
-          <a class="shop-featured-image" href="products.html?search=laptop#shop"><span class="shop-featured-tag">WORK &amp; STUDY</span><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Laptop computer for study and work" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
-          <div class="shop-featured-info"><a href="products.html?search=laptop#shop"><strong>Laptop computers</strong><span>Browse options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price and availability on request</p></div>
-        </article>
-        <article class="shop-featured-card">
-          <a class="shop-featured-image shop-featured-lilac" href="products.html?search=monitor#shop"><span class="shop-featured-tag">UPGRADE YOUR DESK</span><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Computer monitor and desk setup" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
-          <div class="shop-featured-info"><a href="products.html?search=monitor#shop"><strong>Computer monitors</strong><span>Browse options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price and availability on request</p></div>
-        </article>
-        <article class="shop-featured-card">
-          <a class="shop-featured-image shop-featured-blue" href="products.html?search=keyboard#shop"><span class="shop-featured-tag">EVERYDAY ESSENTIALS</span><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Keyboard and computer accessories" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
-          <div class="shop-featured-info"><a href="products.html?search=keyboard#shop"><strong>Keyboards &amp; mice</strong><span>Browse options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price and availability on request</p></div>
-        </article>
-        <article class="shop-featured-card">
-          <a class="shop-featured-image shop-featured-green" href="products.html?search=printer#shop"><span class="shop-featured-tag">FOR YOUR WORKSPACE</span><img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Printer and office equipment" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
-          <div class="shop-featured-info"><a href="products.html?search=printer#shop"><strong>Printers &amp; office</strong><span>Browse options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price and availability on request</p></div>
-        </article>
-        <article class="shop-featured-card">
-          <a class="shop-featured-image shop-featured-slate" href="products.html?search=cctv#shop"><span class="shop-featured-tag">PEACE OF MIND</span><img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Home security camera" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
-          <div class="shop-featured-info"><a href="products.html?search=cctv#shop"><strong>CCTV camera systems</strong><span>Browse options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price and availability on request</p></div>
-        </article>
       </div>
     </section>
 
