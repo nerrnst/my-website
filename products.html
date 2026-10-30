@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=core-shopping-upgrades" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -23,9 +23,11 @@
         <li><a href="products.html" aria-current="page">Products</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="https://nernstechhub.wordpress.com/contact-us/" class="nav-contact" target="_blank" rel="noopener noreferrer">Contact ↗</a></li>
+        <li><a class="store-nav-cart" href="#shop" aria-label="Shopping basket, 0 items"><i data-lucide="shopping-cart" aria-hidden="true"></i> Basket <span class="shop-cart-count" id="header-basket-count" hidden>0</span></a></li>
       </ul>
     </nav>
   </header>
+  <span class="visually-hidden" id="basket-storage-status" aria-live="polite"></span>
   <main>
     <section class="store-hero">
       <div class="container store-hero-content">
@@ -74,7 +76,7 @@
       <div class="store-delivery-info">
         <i data-lucide="truck" aria-hidden="true"></i>
         <div><strong>Delivery details confirmed with your order</strong><p>Share your delivery area in the basket. We’ll confirm availability and any delivery charges before you decide.</p></div>
-        <span>No online payment is taken here</span>
+        <span>M-Pesa or email checkout</span>
       </div>
       <p class="store-wishlist-status" id="wishlist-status" aria-live="polite"></p>
 

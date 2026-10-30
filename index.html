@@ -1,117 +1,152 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nernstechhub provides reliable IT solutions, digital services, and technology products for businesses, schools, and individuals in Kenya.">
-  <title>Nernstechhub | Smart Technology. Strong Solutions. Better Futures.</title>
+  <meta name="description" content="Shop laptops, computer accessories, office equipment, security systems and networking essentials from Nernstechhub in Kenya.">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Nernstechhub | Online Technology Store</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=nernstechhub-top-ad">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=core-shopping-upgrades" defer></script>
 </head>
-<body>
-  <header class="site-header">
+<body class="shop-home">
+  <header class="site-header shop-header">
+    <a class="shop-top-ad" href="products.html#shop" aria-label="Explore Nernstechhub computers and technology">
+      <span class="shop-top-ad-brand"><span class="shop-top-ad-mark">N</span> NERNSTECHHUB</span>
+      <span class="shop-top-ad-message"><strong>Technology for your next big idea.</strong><span>Explore computers, accessories and more</span></span>
+      <span class="shop-top-ad-icons" aria-hidden="true"><i data-lucide="laptop"></i><i data-lucide="headphones"></i><i data-lucide="printer"></i></span>
+      <span class="shop-top-ad-cta">Explore the store <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+    </a>
+    <div class="shop-utility">
+      <div class="container shop-utility-inner">
+        <a href="products.html#shop">Shop Nernstechhub</a>
+        <span>Technology and friendly support, all in one place</span>
+        <a href="https://nernstechhub.wordpress.com/contact-us/" target="_blank" rel="noopener noreferrer">Need help? Contact us</a>
+      </div>
+    </div>
     <nav class="navbar container" aria-label="Main navigation">
       <a href="#home" class="logo" aria-label="Nernstechhub home"><span class="logo-mark">N</span><span>NERNSTECHHUB<span class="logo-accent">.</span></span></a>
+      <form class="shop-header-search" action="products.html#shop" role="search">
+        <label class="visually-hidden" for="store-search">Search products</label>
+        <i data-lucide="search" aria-hidden="true"></i>
+        <input id="store-search" type="search" name="search" placeholder="Search laptops, accessories and more">
+        <button type="submit">Search</button>
+      </form>
+      <a class="shop-header-action" href="https://nernstechhub.wordpress.com/contact-us/" target="_blank" rel="noopener noreferrer"><i data-lucide="headphones" aria-hidden="true"></i><span>Help</span></a>
+      <a class="shop-header-action shop-header-cart" href="products.html#shop" aria-label="Shopping basket, 0 items"><i data-lucide="shopping-cart" aria-hidden="true"></i><span>Basket</span><span class="shop-cart-count" id="header-basket-count" hidden>0</span></a>
       <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">☰</button>
       <ul class="nav-links" id="nav-links">
         <li><a href="#home" aria-current="page">Home</a></li>
-        <li><a href="about.html">About us</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="#contact" class="nav-contact">Contact ↗</a></li>
+        <li><a href="products.html#shop">All products</a></li>
+        <li><a href="services.html">Our services</a></li>
+        <li><a href="about.html">About Nernstechhub</a></li>
+        <li><a href="https://nernstechhub.wordpress.com/contact-us/" class="nav-contact" target="_blank" rel="noopener noreferrer">Contact us <span aria-hidden="true">↗</span></a></li>
       </ul>
     </nav>
+    <nav class="shop-category-nav" aria-label="Shop departments">
+      <div class="container shop-category-links">
+        <a href="products.html?category=Computers#shop"><i data-lucide="laptop" aria-hidden="true"></i> Computers</a>
+        <a href="products.html?category=Accessories#shop"><i data-lucide="keyboard" aria-hidden="true"></i> Accessories</a>
+        <a href="products.html?category=Office#shop"><i data-lucide="printer" aria-hidden="true"></i> Office</a>
+        <a href="products.html?category=Security#shop"><i data-lucide="cctv" aria-hidden="true"></i> Security</a>
+        <a href="products.html?category=Networking#shop"><i data-lucide="wifi" aria-hidden="true"></i> Networking</a>
+        <a href="products.html?category=Accessories&amp;search=storage#shop"><i data-lucide="hard-drive" aria-hidden="true"></i> Storage</a>
+      </div>
+    </nav>
   </header>
+  <span class="visually-hidden" id="basket-storage-status" aria-live="polite"></span>
   <main>
-    <section class="hub-hero container" id="home">
-      <div class="hub-hero-copy">
-        <p class="eyebrow">TECHNOLOGY FOR WHAT'S NEXT</p>
-        <h1>Smart technology.<br><span>Strong solutions.</span><br>Better futures.</h1>
-        <p class="hero-description">Reliable IT solutions, digital services, and technology products for businesses, schools, and individuals across Kenya.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="products.html">Shop products <span aria-hidden="true">↗</span></a>
-          <a class="button button-secondary" href="https://nernstechhub.wordpress.com/contact-us/" target="_blank" rel="noopener noreferrer">Talk to our team</a>
+    <section class="shop-market-hero container" id="home" aria-label="Nernstechhub featured product advertisements">
+      <div class="shop-market-visual" data-product-slideshow aria-label="Featured products">
+        <article class="shop-market-slide is-active" data-slide aria-hidden="false">
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Laptop computer set up in a bright workspace" fetchpriority="high">
+          <a class="shop-market-overlay" href="products.html?category=Computers#shop"><span>COMPUTERS FOR WORK &amp; STUDY</span><strong>Find your next laptop.</strong><span class="shop-slide-cta">Explore computers <i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+        <article class="shop-market-slide" data-slide aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Keyboard and accessories for a computer setup">
+          <a class="shop-market-overlay" href="products.html?category=Accessories#shop"><span>SMALL UPGRADES, BIG DIFFERENCE</span><strong>Make your setup yours.</strong><span class="shop-slide-cta">Shop accessories <i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+        <article class="shop-market-slide" data-slide aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Printer and useful office equipment">
+          <a class="shop-market-overlay" href="products.html?category=Office#shop"><span>GET YOUR WORKSPACE READY</span><strong>Office essentials, sorted.</strong><span class="shop-slide-cta">Explore office tech <i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+        <article class="shop-market-slide" data-slide aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Security camera to help protect your home">
+          <a class="shop-market-overlay" href="products.html?category=Security#shop"><span>PROTECT WHAT MATTERS</span><strong>Explore CCTV solutions.</strong><span class="shop-slide-cta">Shop security <i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+        <button class="shop-market-arrow shop-market-arrow-prev" type="button" data-slide-prev aria-label="Show previous featured product"><i data-lucide="arrow-left" aria-hidden="true"></i></button>
+        <button class="shop-market-arrow shop-market-arrow-next" type="button" data-slide-next aria-label="Show next featured product"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
+        <div class="shop-market-dots" role="group" aria-label="Choose a featured product">
+          <button class="is-active" type="button" data-slide-to="0" aria-label="Show laptops" aria-pressed="true"></button>
+          <button type="button" data-slide-to="1" aria-label="Show accessories" aria-pressed="false"></button>
+          <button type="button" data-slide-to="2" aria-label="Show office products" aria-pressed="false"></button>
+          <button type="button" data-slide-to="3" aria-label="Show security products" aria-pressed="false"></button>
         </div>
-        <p class="hero-note">Reliable. Affordable. Professional. Future-ready.</p>
-      </div>
-      <div class="hub-hero-visual">
-        <img src="dp2.png" alt="Nernstechhub technology services brand graphic">
-        <span class="hub-visual-caption">Empowering businesses through technology.</span>
+        <span class="shop-market-stamp" aria-hidden="true"><i data-lucide="sparkles"></i></span>
       </div>
     </section>
 
-    <section class="hub-overview section" id="overview">
-      <div class="container hub-overview-grid">
-        <div><p class="eyebrow">BUSINESS OVERVIEW</p><h2>Practical technology.<br><span>Progress you can build on.</span></h2></div>
-        <div class="hub-copy"><p>Nernstechhub is a forward-thinking technology company focused on delivering practical and reliable IT solutions. We support businesses, institutions, and individuals with technology that solves real problems and improves daily operations.</p><p>We combine technical expertise with customer-focused service to provide efficient, secure, and modern systems tailored to each client's needs.</p></div>
+    <section class="shop-market-perks" aria-label="Shopping information">
+      <div class="container shop-market-perk-grid">
+        <div><i data-lucide="badge-check" aria-hidden="true"></i><span><strong>Friendly local support</strong><small>Get help choosing the right tech</small></span></div>
+        <div><i data-lucide="package-check" aria-hidden="true"></i><span><strong>Order with confidence</strong><small>We confirm stock and pricing</small></span></div>
+        <div><i data-lucide="truck" aria-hidden="true"></i><span><strong>Delivery across Kenya</strong><small>Details confirmed with your order</small></span></div>
       </div>
-      <div class="container hub-outcomes"><span>Business efficiency</span><span>Digital communication</span><span>System security</span><span>Technology performance</span></div>
     </section>
 
-    <section class="section container hub-products-entry">
-      <div class="hub-section-heading"><div><p class="eyebrow">PRODUCTS</p><h2>Technology for work and life.</h2></div><p>Browse computers, office equipment, security systems and networking essentials, then send us your order request.</p></div>
-      <a class="button button-primary" href="products.html">Shop products <span aria-hidden="true">↗</span></a>
+    <section class="shop-featured container" id="featured">
+      <div class="shop-market-section-heading">
+        <div><p class="shop-market-eyebrow"><span></span> PICKED FOR YOUR SETUP</p><h2>Explore our tech</h2></div>
+        <a href="products.html#shop">See all products <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="shop-featured-grid">
+        <article class="shop-featured-card">
+          <a class="shop-featured-image" href="products.html?search=laptop#shop"><span class="shop-featured-tag">WORK &amp; STUDY</span><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Laptop computer for study and work" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <div class="shop-featured-info"><a href="products.html?search=laptop#shop"><strong>Laptop computers</strong><span>Browse options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price and availability on request</p></div>
+        </article>
+        <article class="shop-featured-card">
+          <a class="shop-featured-image shop-featured-lilac" href="products.html?search=monitor#shop"><span class="shop-featured-tag">UPGRADE YOUR DESK</span><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Computer monitor and desk setup" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <div class="shop-featured-info"><a href="products.html?search=monitor#shop"><strong>Computer monitors</strong><span>Browse options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price and availability on request</p></div>
+        </article>
+        <article class="shop-featured-card">
+          <a class="shop-featured-image shop-featured-blue" href="products.html?search=keyboard#shop"><span class="shop-featured-tag">EVERYDAY ESSENTIALS</span><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Keyboard and computer accessories" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <div class="shop-featured-info"><a href="products.html?search=keyboard#shop"><strong>Keyboards &amp; mice</strong><span>Browse options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price and availability on request</p></div>
+        </article>
+        <article class="shop-featured-card">
+          <a class="shop-featured-image shop-featured-green" href="products.html?search=printer#shop"><span class="shop-featured-tag">FOR YOUR WORKSPACE</span><img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Printer and office equipment" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <div class="shop-featured-info"><a href="products.html?search=printer#shop"><strong>Printers &amp; office</strong><span>Browse options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price and availability on request</p></div>
+        </article>
+        <article class="shop-featured-card">
+          <a class="shop-featured-image shop-featured-slate" href="products.html?search=cctv#shop"><span class="shop-featured-tag">PEACE OF MIND</span><img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Home security camera" loading="lazy" decoding="async"><span class="shop-featured-quick" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+          <div class="shop-featured-info"><a href="products.html?search=cctv#shop"><strong>CCTV camera systems</strong><span>Browse options <i data-lucide="arrow-right" aria-hidden="true"></i></span></a><p>Price and availability on request</p></div>
+        </article>
+      </div>
     </section>
 
-    <section class="hub-services section" id="services">
+    <section class="shop-order-guide">
       <div class="container">
-        <div class="hub-section-heading"><div><p class="eyebrow">PROFESSIONAL SERVICES</p><h2>Support that keeps you moving.</h2></div><p>From secure installations to day-to-day IT support, get practical help from a team that understands your setup.</p></div>
-        <div class="services-infographic" aria-label="Nernstechhub services">
-          <article class="infographic-service infographic-service-blue">
-            <span class="infographic-marker"><span>01</span><i data-lucide="laptop" aria-hidden="true"></i></span>
-            <div class="infographic-title"><span class="infographic-category">REPAIR &amp; CARE</span><h3>Computer &amp; Laptop Repair</h3></div>
-            <p>Computer servicing, diagnostics and repairs.</p>
-          </article>
-          <article class="infographic-service infographic-service-orange">
-            <span class="infographic-marker"><span>02</span><i data-lucide="smartphone" aria-hidden="true"></i></span>
-            <div class="infographic-title"><span class="infographic-category">MOBILE</span><h3>Phone Repair &amp; Accessories</h3></div>
-            <p>Phone repairs, servicing and accessories.</p>
-          </article>
-          <article class="infographic-service infographic-service-green">
-            <span class="infographic-marker"><span>03</span><i data-lucide="network" aria-hidden="true"></i></span>
-            <div class="infographic-title"><span class="infographic-category">CONNECTIVITY</span><h3>Networking</h3></div>
-            <p>Network installation, Wi-Fi setup, cabling and troubleshooting.</p>
-          </article>
-          <article class="infographic-service infographic-service-coral">
-            <span class="infographic-marker"><span>04</span><i data-lucide="cctv" aria-hidden="true"></i></span>
-            <div class="infographic-title"><span class="infographic-category">SECURITY</span><h3>CCTV Installation</h3></div>
-            <p>Security cameras, installation and configuration.</p>
-          </article>
-          <article class="infographic-service infographic-service-violet">
-            <span class="infographic-marker"><span>05</span><i data-lucide="globe" aria-hidden="true"></i></span>
-            <div class="infographic-title"><span class="infographic-category">DIGITAL</span><h3>Web Development</h3></div>
-            <p>Business websites and web applications.</p>
-          </article>
-          <article class="infographic-service infographic-service-gold">
-            <span class="infographic-marker"><span>06</span><i data-lucide="printer" aria-hidden="true"></i></span>
-            <div class="infographic-title"><span class="infographic-category">CREATIVE</span><h3>Graphic Design &amp; Printing</h3></div>
-            <p>Logo design, branding and marketing materials.</p>
-          </article>
-          <article class="infographic-service infographic-service-teal">
-            <span class="infographic-marker"><span>07</span><i data-lucide="brain" aria-hidden="true"></i></span>
-            <div class="infographic-title"><span class="infographic-category">LEARNING</span><h3>Chess Training &amp; Coaching</h3></div>
-            <p>Chess lessons, strategic thinking, tactics, opening preparation and tournament coaching.</p>
-          </article>
+        <div class="shop-market-section-heading">
+          <div><p class="shop-market-eyebrow"><span></span> EASY ORDERING</p><h2>How to shop with us</h2></div>
         </div>
+        <div class="shop-order-steps">
+          <article class="shop-order-step"><span class="shop-step-number">01</span><span class="shop-step-icon"><i data-lucide="search" aria-hidden="true"></i></span><div><h3>Choose your tech</h3><p>Browse products and add what you need to your basket.</p></div></article>
+          <span class="shop-step-connector" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
+          <article class="shop-order-step"><span class="shop-step-number">02</span><span class="shop-step-icon"><i data-lucide="send" aria-hidden="true"></i></span><div><h3>Send your request</h3><p>Share your contact and delivery details at checkout.</p></div></article>
+          <span class="shop-step-connector" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
+          <article class="shop-order-step"><span class="shop-step-number">03</span><span class="shop-step-icon"><i data-lucide="package-check" aria-hidden="true"></i></span><div><h3>We confirm the details</h3><p>We check price, availability and delivery before you decide.</p></div></article>
+        </div>
+        <p class="shop-guide-note"><i data-lucide="shield-check" aria-hidden="true"></i> Prices and delivery charges are confirmed with you before you approve payment.</p>
       </div>
     </section>
 
-    <section class="section container hub-audience-values">
-      <div class="hub-audience"><p class="eyebrow">WHO WE SERVE</p><h2>Technology for every kind of team.</h2><p>Every client receives personal attention and solutions tailored to their needs.</p><ul><li>Small and medium-sized businesses</li><li>Schools and educational institutions</li><li>Corporate offices and organizations</li><li>Retail shops and service businesses</li><li>Individuals and home users</li></ul></div>
-      <div class="hub-values"><p class="eyebrow">WHY NERNSTECHHUB</p><h2>Your technology partner.</h2><div class="hub-value"><strong>Reliable</strong><span>Consistent support you can count on.</span></div><div class="hub-value"><strong>Affordable</strong><span>Flexible solutions built around your needs.</span></div><div class="hub-value"><strong>Forward-looking</strong><span>Modern systems ready to grow with you.</span></div><div class="hub-value"><strong>Customer-focused</strong><span>Personal service at every step.</span></div></div>
+    <section class="shop-contact" id="contact">
+      <div class="container shop-contact-inner"><div><p class="shop-market-eyebrow"><span></span> NERNSTECHHUB IS HERE TO HELP</p><h2>Looking for something specific?</h2><p>Talk to our team for product recommendations, current prices and delivery information.</p></div><a class="shop-button shop-button-light" href="https://nernstechhub.wordpress.com/contact-us/" target="_blank" rel="noopener noreferrer">Contact Nernstechhub <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
     </section>
-
-    <section class="hub-purpose-band">
-      <div class="container hub-purpose-grid"><article><p class="eyebrow">OUR MISSION</p><h2>Empower people to do more with technology.</h2><p>To deliver reliable, affordable, and innovative technology solutions that help businesses and individuals grow, connect, and operate efficiently in a digital world.</p></article><article><p class="eyebrow">OUR VISION</p><h2>Trusted technology, across Africa and beyond.</h2><p>To become a leading technology service provider known for innovation, reliability, and excellence in IT solutions.</p></article></div>
-    </section>
-
-    <section class="hub-contact-band" id="contact"><div class="container hub-contact-content"><div><p class="eyebrow">LET'S BUILD SMARTER SYSTEMS</p><h2>Ready to move your business forward?</h2><p>Whether you need IT support, security systems, networking, or digital services, Nernstechhub is ready to help.</p></div><a class="button button-primary" href="https://nernstechhub.wordpress.com/contact-us/" target="_blank" rel="noopener noreferrer">Contact Nernstechhub <span aria-hidden="true">↗</span></a></div></section>
   </main>
-  <footer class="site-footer"><div class="container footer-content"><a href="#home" class="logo"><span class="logo-mark">N</span><span>NERNSTECHHUB<span class="logo-accent">.</span></span></a><p>© <span id="year"></span> Nernstechhub</p><a href="https://nernstechhub.wordpress.com/" target="_blank" rel="noopener noreferrer">Visit WordPress site ↗</a></div></footer>
+  <footer class="site-footer"><div class="container footer-content"><a href="#home" class="logo"><span class="logo-mark">N</span><span>NERNSTECHHUB<span class="logo-accent">.</span></span></a><p>© <span id="year"></span> Nernstechhub</p><a href="products.html#shop">Shop products <span aria-hidden="true">↗</span></a></div></footer>
 </body>
 </html>

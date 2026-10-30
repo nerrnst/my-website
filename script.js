@@ -27,6 +27,114 @@ if (yearElement) yearElement.textContent = new Date().getFullYear();
 
 if (window.lucide) window.lucide.createIcons();
 
+const basketStorageKey = "nernstechhub-basket";
+const basketStorageStatus = document.querySelector("#basket-storage-status");
+
+function reportBasketStorageStatus(message) {
+  if (basketStorageStatus) basketStorageStatus.textContent = message;
+}
+
+function readBasket(availableNames = null) {
+  try {
+    const storedBasket = JSON.parse(localStorage.getItem(basketStorageKey) || "[]");
+    if (!Array.isArray(storedBasket)) throw new Error("Stored basket data is invalid.");
+
+    return new Map(storedBasket.filter((entry) => (
+      Array.isArray(entry)
+      && typeof entry[0] === "string"
+      && (!availableNames || availableNames.has(entry[0]))
+      && Number.isSafeInteger(entry[1])
+      && entry[1] > 0
+    )));
+  } catch {
+    reportBasketStorageStatus("Your saved basket could not be loaded from this browser.");
+    return new Map();
+  }
+}
+
+function updateHeaderBasketCount(basket) {
+  const count = document.querySelector("#header-basket-count");
+  if (!count) return;
+
+  const totalQuantity = Array.from(basket.values()).reduce((total, quantity) => total + quantity, 0);
+  count.textContent = String(totalQuantity);
+  count.hidden = totalQuantity === 0;
+  count.closest("a").setAttribute("aria-label", `Shopping basket, ${totalQuantity} ${totalQuantity === 1 ? "item" : "items"}`);
+}
+
+updateHeaderBasketCount(readBasket());
+window.addEventListener("storage", (event) => {
+  if (event.key === basketStorageKey || event.key === null) {
+    updateHeaderBasketCount(readBasket());
+  }
+});
+
+const productSlideshow = document.querySelector("[data-product-slideshow]");
+if (productSlideshow) {
+  const slides = Array.from(productSlideshow.querySelectorAll("[data-slide]"));
+  const slideButtons = Array.from(productSlideshow.querySelectorAll("[data-slide-to]"));
+  const previousButton = productSlideshow.querySelector("[data-slide-prev]");
+  const nextButton = productSlideshow.querySelector("[data-slide-next]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let activeSlide = 0;
+  let slideshowTimer;
+  let isPaused = false;
+
+  const showSlide = (index) => {
+    activeSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === activeSlide;
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+      slide.inert = !isActive;
+    });
+    slideButtons.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === activeSlide;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  };
+
+  const stopSlideshow = () => {
+    window.clearInterval(slideshowTimer);
+  };
+
+  const startSlideshow = () => {
+    stopSlideshow();
+    if (reducedMotion.matches || isPaused || document.hidden) return;
+    slideshowTimer = window.setInterval(() => showSlide(activeSlide + 1), 4000);
+  };
+
+  previousButton.addEventListener("click", () => {
+    showSlide(activeSlide - 1);
+    startSlideshow();
+  });
+  nextButton.addEventListener("click", () => {
+    showSlide(activeSlide + 1);
+    startSlideshow();
+  });
+  slideButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      showSlide(Number(button.dataset.slideTo));
+      startSlideshow();
+    });
+  });
+  productSlideshow.addEventListener("focusin", (event) => {
+    if (!event.target.closest("[data-slide]")) return;
+    isPaused = true;
+    stopSlideshow();
+  });
+  productSlideshow.addEventListener("focusout", (event) => {
+    if (event.target.closest("[data-slide]") && !event.relatedTarget?.closest("[data-slide]")) {
+      isPaused = false;
+      startSlideshow();
+    }
+  });
+  document.addEventListener("visibilitychange", startSlideshow);
+  reducedMotion.addEventListener("change", startSlideshow);
+  startSlideshow();
+}
+
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
   const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -73,9 +181,13 @@ const orderForm = document.querySelector("#order-form");
 
 if (productGrid && orderForm) {
   const products = Array.from(productGrid.querySelectorAll(".store-product"));
+  const availableProductNames = new Set(products.map((product) => product.dataset.name));
   const basketItems = document.querySelector("#basket-items");
   const basketCount = document.querySelector("#basket-count");
   const productSearch = document.querySelector("#product-search");
+  const queryParameters = new URLSearchParams(window.location.search);
+  const initialSearch = queryParameters.get("search") || "";
+  productSearch.value = initialSearch;
   const productSort = document.querySelector("#product-sort");
   const resultCount = document.querySelector("#product-result-count");
   const emptyMessage = document.querySelector("#product-empty");
@@ -91,10 +203,12 @@ if (productGrid && orderForm) {
   const quickViewTitle = document.querySelector("#quick-view-title");
   const quickViewDescription = document.querySelector("#quick-view-description");
   const quickViewAdd = document.querySelector("#quick-view-add");
-  const basket = new Map();
+  const basket = readBasket(availableProductNames);
   const originalOrder = new Map(products.map((product, index) => [product, index]));
   const savedProducts = new Set();
-  let activeCategory = "all";
+  const productCategories = new Set(products.map((product) => product.dataset.category));
+  const requestedCategory = queryParameters.get("category");
+  let activeCategory = productCategories.has(requestedCategory) ? requestedCategory : "all";
   let quickViewProduct = null;
   let paymentPending = false;
 
@@ -168,11 +282,20 @@ if (productGrid && orderForm) {
     info.querySelector("[data-add-product]").before(actions);
   });
 
-  const updateBasket = () => {
+  const updateBasket = (persist = true) => {
     const entries = Array.from(basket.entries());
     const totalQuantity = entries.reduce((total, [, quantity]) => total + quantity, 0);
     basketCount.textContent = String(totalQuantity);
     basketCount.setAttribute("aria-label", `${totalQuantity} ${totalQuantity === 1 ? "item" : "items"}`);
+    updateHeaderBasketCount(basket);
+    if (persist) {
+      try {
+        localStorage.setItem(basketStorageKey, JSON.stringify(entries));
+        reportBasketStorageStatus("");
+      } catch {
+        reportBasketStorageStatus("Basket changes are only saved for this visit because browser storage is unavailable.");
+      }
+    }
     checkoutButton.disabled = totalQuantity === 0 || paymentPending;
     basketItems.replaceChildren();
 
@@ -221,6 +344,9 @@ if (productGrid && orderForm) {
   };
 
   document.querySelectorAll(".store-filter").forEach((filter) => {
+    const isInitialFilter = filter.dataset.category === activeCategory;
+    filter.classList.toggle("is-active", isInitialFilter);
+    filter.setAttribute("aria-pressed", String(isInitialFilter));
     filter.addEventListener("click", () => {
       activeCategory = filter.dataset.category;
       document.querySelectorAll(".store-filter").forEach((button) => {
@@ -312,6 +438,13 @@ if (productGrid && orderForm) {
     }
     updateBasket();
     orderStatus.textContent = basket.has(name) ? `${name} quantity updated.` : `${name} removed from your basket.`;
+  });
+
+  window.addEventListener("storage", (event) => {
+    if (event.key !== basketStorageKey && event.key !== null) return;
+    basket.clear();
+    readBasket(availableProductNames).forEach((quantity, name) => basket.set(name, quantity));
+    updateBasket(false);
   });
 
   paymentMethod.addEventListener("change", () => {
@@ -410,6 +543,6 @@ if (productGrid && orderForm) {
   });
 
   updateProducts();
-  updateBasket();
+  updateBasket(false);
   updateWishlist();
 }
